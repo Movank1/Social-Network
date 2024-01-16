@@ -280,5 +280,6 @@ You are required to submit BOTH of the following for review:
 
 ---
 © 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
-#   S o c i a l - N e t w o r k  
+#   S o c i a l - N e t w o r k 
+ 
  

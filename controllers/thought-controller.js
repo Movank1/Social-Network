@@ -7,18 +7,18 @@ module.exports = {
       .then((thought) => res.json(thought))
       .catch((err) => res.status(500).json(err));
   },
-  // get single thought
+  // Get only single thought
   getSingleThought(req, res) {
     Thought.findOne({ _id: req.params.thoughtId })
       .select("-__v")
       .then((thought) =>
         !thought
-          ? res.status(404).json({ message: "No Thought find with this ID!" })
+          ? res.status(404).json({ message: "No Thought find at this time with this ID!" })
           : res.json(thought)
       )
       .catch((err) => res.status(500).json(err));
   },
-  //create a thought and push the created thought's _id to the associated user's thoughts array field
+  //create  and push the created thought's _id to the associated user'
   createThought(req, res) {
     Thought.create(req.body)
       .then(({ _id }) => {
@@ -30,7 +30,7 @@ module.exports = {
       })
       .then((thought) =>
         !thought
-          ? res.status(404).json({ message: "No User find with this ID!" })
+          ? res.status(404).json({ message: "Can not find with this ID!" })
           : res.json(thought)
       )
       .catch((err) => res.status(500).json(err));
